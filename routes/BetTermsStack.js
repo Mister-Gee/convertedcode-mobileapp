@@ -3,20 +3,20 @@ import styles from '../styles/global';
 import Header from '../screens/Components/Header';
 import DetailHeader from '../screens/Components/DetailHeader';
 import React from 'react';
-import MatchReviews from '../screens/MatchReviews/MatchReviews';
-import MatchReviewDetail from '../screens/MatchReviews/MatchReviewDetail';
+import BetTerms from '../screens/BetTerminologies/BetTerms';
+import BetTerm from '../screens/BetTerminologies/BetTerm';
 
 const screens = {
     Index: {
-        screen: MatchReviews,
+        screen: BetTerms,
         navigationOptions:({navigation}) => {
             return {
-                headerTitle: () => <Header navigation={navigation} title="Match Review" />
+                headerTitle: () => <Header navigation={navigation} title="Bet Terminologies" />
             }
         }
     },
     Detail: {
-        screen: MatchReviewDetail,
+        screen: BetTerm,
         navigationOptions: ({navigation}) => {
             return {
                 headerTitle: () => <DetailHeader title={navigation.getParam('title')} />
@@ -25,10 +25,10 @@ const screens = {
     },
 }
 
-const MatchReviewStack = createStackNavigator(screens, {
+const BetTermsStack = createStackNavigator(screens, {
     defaultNavigationOptions: {
         headerStyle: styles.headerStyle
     }
 });
 
-export default MatchReviewStack;
+export default BetTermsStack;
