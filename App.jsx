@@ -1,36 +1,66 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
-import * as Font from 'expo-font';
+import React, { useEffect } from 'react';
 import AppLoading from 'expo-app-loading';
-import { Text, View, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import {TouchableWithoutFeedback, Keyboard } from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import styles from './styles/global';
-import Intro from './screens/IntroScreen/Intro';
+import getFont from './constants/getFont';
+import Navigator from './routes/drawer';
+import Onboard from './screens/Onboard/Onboard';
+import { useState } from '@hookstate/core';
+import store from './store/store';
+import jwt_decode from 'jwt-decode';
+import { getReturnTokenFromStorage } from './utils/Functions';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
+  const [isAppLoaded, setIsAppLoaded] = React.useState(false)
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false)
+  const [reRender, setRerender] = React.useState(false)
 
-  const getFont = () => Font.loadAsync({
-    'inter-regular': require("./assets/fonts/Inter-Regular.ttf"),
-    'inter-bold': require("./assets/fonts/Inter-Bold.ttf"),
-    'inter-black': require("./assets/fonts/Inter-Black.ttf"),
-    'inter-light': require("./assets/fonts/Inter-Light.ttf"),
-    'inter-medium': require("./assets/fonts/Inter-Medium.ttf")
-  })
+  const {user} = useState(store)
 
-  const [isAppLoaded, setIsAppLoaded] = useState(false)
+  useEffect(() => {
+    const initLoad = async () => {
+      const returnToken = await getReturnTokenFromStorage()
+      if(returnToken){
+        const decoded = jwt_decode(returnToken)
+        user.set(decoded[0])
+        setIsLoggedIn(true)
+      }
+      else if(user.get() !== null ){
+        setIsLoggedIn(true)
+      }
+      else{
+        setIsLoggedIn(false)
+      }
+    }
+    initLoad()
+  },[reRender])
 
   if(isAppLoaded){
     return (
     <TouchableWithoutFeedback
       onPress={() => Keyboard.dismiss()}
     >
-      <View style={styles.container}>
-        {/* <Text>Open up App.js to start working on your app! yevs</Text> */}
-        <Intro />
+      <SafeAreaView style={styles.container}>
+        {isLoggedIn
+        ?
+        <>
+        <Navigator 
+          setReRender = {setRerender}
+        />
         <StatusBar 
-          style="light" 
+          backgroundColor="#FFFFFF"
+          style="auto" 
           animated={true}
         />
-      </View>
+        </>
+        :
+        <Onboard 
+          setRerender = {setRerender}
+        />
+        }
+      </SafeAreaView>
     </TouchableWithoutFeedback>
   );
   }
