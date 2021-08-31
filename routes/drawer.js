@@ -1,3 +1,4 @@
+import React from 'react';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createAppContainer } from '@react-navigation/native';
 import IndexStack from './IndexStack';
@@ -5,7 +6,9 @@ import MatchReviewStack from './MatchReviewStack';
 import ConvertCodeStack from './ConvertCodeStack';
 import PunterTipsStack from './PunterTipsStack';
 import BetTermsStack from './BetTermsStack';
-import ConversionHistory from './ConversionHistoryStack';
+import ConversionHistoryStack from './ConversionHistoryStack';
+import DashboardStack from './DashboardStack';
+import NavDrawer from '../screens/Components/NavDrawer';
 
 const RootDrawerNavigator = createDrawerNavigator({
     Home: {
@@ -40,12 +43,19 @@ const RootDrawerNavigator = createDrawerNavigator({
         navigationOptions: () => ({
             title: "Conversion History"
         })
+    },
+    Dashboard: {
+        screen: DashboardStack,
+        navigationOptions: () => ({
+            title: "Dashboard"
+        })
     }
 }, {
     // drawerBackgroundColor: 'rgba(255,255,255,.9)',
     contentOptions: {
         activeTintColor: '#2F970C',
-    }
+    }, 
+    contentComponent: ({navigation}) => <NavDrawer navigation={navigation} />
 })
 
 export default createAppContainer(RootDrawerNavigator)

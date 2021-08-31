@@ -28,17 +28,16 @@ const SignupForm = ({close, login, setLoading, setRerender}) => {
     })
 
     const {user} = useState(store)
+    const {isLoggedIn} = useState(store)
     const {accessToken} = useState(store)
 
     const onSubmit = async (value) => {
-        console.log(value)
         setLoading(true)
         if(value.pwd === value.pwd_confirmation){
             try{
                 let res = await register(value)
                 const status = res.status
                 const data = res.data
-                console.log(res)
                 if(status === 201 && data != null){
                     // localStorage.setItem("accessToken", data.token)
                     // localStorage.setItem("returnToken", data.returnToken)
@@ -51,6 +50,7 @@ const SignupForm = ({close, login, setLoading, setRerender}) => {
                     //     })
                     // }, 1500)   
                     // setReturnToken(data.returnToken)
+                    isLoggedIn.set(true)
                     setRerender(true)
                 }
                 else{

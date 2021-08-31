@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TextInput, Text, Switch, TouchableOpacity } from 'react-native';
-import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import styles from '../../styles/global';
 import { Formik } from 'formik';
 import * as Yup from 'yup'; 
@@ -15,6 +15,8 @@ const LoginForm = ({close, signup, setLoading, setRerender}) => {
     const toggleSwitch = () => setRememberMe(previousState => !previousState);
 
     const {user} = useState(store)
+    const {isLoggedIn} = useState(store)
+
     const {accessToken} = useState(store)
 
     const initialValues = {
@@ -44,6 +46,7 @@ const LoginForm = ({close, signup, setLoading, setRerender}) => {
                     await AsyncStorage.setItem("accessToken", data.token)
                     await AsyncStorage.setItem("returnToken", data.returnToken)
                 }
+                isLoggedIn.set(true)
                 setLoading(false)
                 setRerender(true)
             }

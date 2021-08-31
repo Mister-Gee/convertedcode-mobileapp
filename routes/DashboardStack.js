@@ -2,23 +2,22 @@ import { createStackNavigator } from 'react-navigation-stack';
 import styles from '../styles/global';
 import Header from '../screens/Components/Header';
 import React from 'react';
-import ConversionHistory from '../screens/ConversionHistory/ConversionHistory';
+import Dashboard from '../screens/Dashboard/Dashboard';
 
 const screens = {
     Index: {
-        screen: ConversionHistory,
+        screen: Dashboard,
         navigationOptions:({navigation}) => {
             return {
-                headerTitle: () => <Header navigation={navigation} title="Conversion History" />
+                headerTitle: () => <Header navigation={navigation} title="Dashboard" />
             }
         }
     }
 }
-
-const ConversionHistoryStack = createStackNavigator(screens, {
+const DashboardStack = createStackNavigator(screens, {
     defaultNavigationOptions: {
         headerStyle: styles.headerStyle
     }
 });
 
-export default ConversionHistoryStack;
+export default DashboardStack;

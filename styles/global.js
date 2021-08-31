@@ -438,6 +438,220 @@ const styles = StyleSheet.create({
         fontSize: 13,
         fontFamily: 'inter-regular',
         color: '#333333'
+    },
+    drawerWapper: {
+        flex: 1,
+        flexDirection: 'column',
+        paddingVertical: 10,
+        paddingHorizontal: 20
+    },
+    drawerUsersection: {
+        borderBottomColor: '#E4E4E4',
+        borderBottomWidth: 1,
+        paddingBottom: 20,
+        paddingTop: 35,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    drawerUserText: {
+        fontFamily: 'inter-bold',
+        fontSize: 24
+    },
+    routes: {
+        marginTop: 30,
+    },
+    routeLinkContainer: {
+        marginVertical: 12,
+    },
+    routeLinkWrapper: {
+        flexDirection: 'row'
+    },
+    routeLink: {
+        color: '#8B8787',
+        fontFamily: 'inter-bold',
+        fontSize: 15,
+        // fontWeight: 'bold',
+        marginLeft: 15,
+        marginTop: 7
+    },
+    activeRouteLink: {
+        color: '#2F970C',
+    },
+    logoutLinkContainer: {
+        marginTop: 150
+    },
+    punterTipsImage: {
+        width: '100%',
+        marginBottom: 20
+    },
+    tableSection: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        marginTop: 10
+    },
+    tableHeader: {
+        paddingLeft: 30,
+        paddingBottom: 23,
+        borderBottomColor: '#C2C2C2',
+        borderBottomWidth: 2,
+        textAlign: 'center'
+    },
+    tableHeaderText: {
+        fontFamily: 'inter-bold',
+        fontSize: 14,
+        color: '#3E444A'
+    },
+    tableBody: {
+        // paddingLeft: 17,
+        paddingTop: 10,
+        paddingBottom: 23,
+        borderBottomColor: '#C2C2C2',
+        borderBottomWidth: 1,
+    },
+    punterText: {
+        color: '#F06E0C',
+    },
+    tableBodyText: {
+        color: '#000000',
+        fontFamily: 'inter-regular',
+        fontSize: 11,
+        textAlign: 'center'
+    },
+    viewCode: {
+        color: '#2F970C'
+    },
+    ConvertCodeSection: {
+        paddingVertical: 10,
+        paddingHorizontal: 30,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    convertCodeHeader: {
+        marginBottom: 20
+    },
+    convertCodeHeaderText: {
+        fontFamily: 'inter-bold',
+        fontSize: 20,
+        color: '#333333'
+    },
+    convertCodeInputField: {
+        borderColor: '#F2F2F2',
+        borderWidth: 1,
+        borderRadius: 5,
+        backgroundColor: '#FFFFFF',
+        paddingVertical: 7,
+        paddingHorizontal: 11,
+    },
+    convertCodeError: {
+        color: 'red',
+        fontFamily: 'inter-regular',
+        fontSize: 12,
+        marginBottom: 10,
+    },
+    convertCodeSelectField: {
+        borderColor: '#F2F2F2',
+        backgroundColor: '#FFFFFF',
+        borderWidth: 1,
+        borderRadius: 5,
+        width: '100%',
+        paddingVertical: 7
+    },
+    convertBtn: {
+        backgroundColor: '#2F970C',
+        paddingVertical: 10,
+        paddingHorizontal: 80,
+        color: '#FFFFFF',
+        fontFamily: 'inter-regular',
+        textAlign: 'center'
+    },
+    convertCodeSelectTextField: {
+        fontSize: 12,
+        color: '#000000',
+        textAlign: 'left',
+        fontFamily: 'inter-regular'
+    },
+    socketInfoSection: {
+        marginBottom: 10
+    },
+    conversionText: {
+        fontFamily: 'inter-regular',
+        fontSize: 14
+    },
+    conversionBold: {
+        fontWeight: 'bold',
+    },
+    conversionRed: {
+        color: 'red'
+    },
+    goBackSection: {
+        marginTop: 20
+    },
+    goBackText: {
+        color: '#2F970C',
+        fontFamily: 'inter-regular',
+        fontSize: 15
+    },
+    dashboardCard: {
+        backgroundColor: '#FFFFFF',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+        paddingHorizontal: 15,
+        paddingVertical: 25,
+        marginVertical: 10,
+        marginHorizontal: 10,
+        borderRadius: 7
+    },
+    cardWrapper: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    cardTitle: {
+        fontFamily: 'inter-regular',
+        fontSize: 16,
+        lineHeight: 18,
+        color: '#848383',
+        fontWeight: 'bold'
+    },
+    cardText: {
+        fontSize: 24,
+        fontFamily: 'inter-regular',
+        color: '#848383',
+        fontWeight: 'bold'
+    },
+    displayRow: {
+        flexDirection: 'row'
+    },
+    subscription: {
+        marginVertical: 15,
+        paddingHorizontal: 20,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    subscriptionHeader: {
+        fontFamily: 'inter-bold',
+        fontSize: 30,
+    },
+    subscriptionText: {
+        textAlign: 'center',
+        fontFamily: 'inter-regular',
+    },
+    subLink: {
+        marginTop: 20,
+        fontFamily: 'inter-regular',
+        fontSize: 15,
+        color: '#FFFFFF',
+        backgroundColor: '#2F9F0C',
+        paddingVertical: 10,
+        paddingHorizontal: 40
     }
 });
 

@@ -14,10 +14,11 @@ import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   const [isAppLoaded, setIsAppLoaded] = React.useState(false)
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false)
+  // const [isLoggedIn, setIsLoggedIn] = React.useState(false)
   const [reRender, setRerender] = React.useState(false)
 
   const {user} = useState(store)
+  const {isLoggedIn} = useState(store)
 
   useEffect(() => {
     const initLoad = async () => {
@@ -25,13 +26,16 @@ export default function App() {
       if(returnToken){
         const decoded = jwt_decode(returnToken)
         user.set(decoded[0])
-        setIsLoggedIn(true)
+        // setIsLoggedIn(true)
+        isLoggedIn.set(true)
       }
       else if(user.get() !== null ){
-        setIsLoggedIn(true)
+        // setIsLoggedIn(true)
+        isLoggedIn.set(true)
       }
       else{
-        setIsLoggedIn(false)
+        // setIsLoggedIn(false)
+        isLoggedIn.set(true)
       }
     }
     initLoad()
@@ -43,7 +47,7 @@ export default function App() {
       onPress={() => Keyboard.dismiss()}
     >
       <SafeAreaView style={styles.container}>
-        {isLoggedIn
+        {isLoggedIn.get()
         ?
         <>
         <Navigator 
