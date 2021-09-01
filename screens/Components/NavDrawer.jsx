@@ -30,7 +30,7 @@ const NavDrawer = ({navigation}) => {
         catch (error) {
            console.log(error) 
         }
-        isLoggedIn.set(false)
+        isLoggedIn.set(null)
     }
     return (
         <View style={styles.drawerWapper}>

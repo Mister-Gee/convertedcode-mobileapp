@@ -2,9 +2,9 @@
     "name": "Converted Code(Beta)",
     "displayName": "Converted Code(Beta)",
     "expo": {
-        "name": "convertedcode",
-        "slug": "convertedcode",
-        "version": "1.0.1",
+        "name": "Converted Code(Beta)",
+        "slug": "ConvertedCode",
+        "version": "1.0.3",
         "orientation": "portrait",
         "icon": "./assets/images/icon.png",
         "splash": {
@@ -22,7 +22,8 @@
             "adaptiveIcon": {
                 "foregroundImage": "./assets/images/adaptive-icon.png",
                 "backgroundColor": "#FFFFFF"
-            }
+            },
+            "package": "com.convertedcode"
         }
     }
 }

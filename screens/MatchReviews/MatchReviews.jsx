@@ -53,7 +53,7 @@ const MatchReviews = ({navigation}) => {
       const MatchReviewList = ({item}) => {
           return (
               <TouchableOpacity
-                onPress={() => navigation.navigate('Detail', item)}
+                onPress={() => navigation.push('Detail', item)}
               >
                 <View style={styles.listWrapper}>
                     <Image

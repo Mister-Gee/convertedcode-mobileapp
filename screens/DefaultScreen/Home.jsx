@@ -34,7 +34,7 @@ const Home = ({navigation}) => {
         return (
             <TouchableOpacity
                 onPress={() => {
-                    navigation.navigate("MatchReview", {}, NavigationActions.navigate({
+                    navigation.push("MatchReview", {}, NavigationActions.navigate({
                         routeName: 'Detail', 
                         params: item
                     })

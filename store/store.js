@@ -7,7 +7,7 @@ const store = createState({
     conversionUnit: 0,
     totalConversions: 0,
     conversionPlan: "None",
-    isLoggedIn: false
+    isLoggedIn: null
 })
 
 export default store;
