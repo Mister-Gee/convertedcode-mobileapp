@@ -49,6 +49,7 @@ const LoginForm = ({close, signup, setLoading, setRerender}) => {
                 isLoggedIn.set(true)
                 setLoading(false)
                 setRerender(true)
+                console.log("done")
             }
             else{
                 console.log("Error")

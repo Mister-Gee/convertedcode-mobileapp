@@ -1,25 +1,22 @@
-import { createStackNavigator } from 'react-navigation-stack';
-import styles from '../styles/global';
+import { createStackNavigator } from '@react-navigation/stack';
 import Header from '../screens/Components/Header';
-import DetailHeader from '../screens/Components/DetailHeader';
 import React from 'react';
 import PuntersTips from '../screens/PuntersTips/PuntersTips';
 
-const screens = {
-    Index: {
-        screen: PuntersTips,
-        navigationOptions:({navigation}) => {
-            return {
-                headerTitle: () => <Header navigation={navigation} title="Punters Tips" />
-            }
-        }
-    }
+const Stack = createStackNavigator();
+const PunterTipsStack = () => {
+    return (
+        <Stack.Navigator
+            screenOptions = {{
+                header: ({navigation}) => <Header navigation={navigation} title="Punters Tips" />
+            }}
+        >
+            <Stack.Screen 
+                name="Index" 
+                component={PuntersTips} 
+            />
+        </Stack.Navigator>
+    )
 }
-
-const PunterTipsStack = createStackNavigator(screens, {
-    defaultNavigationOptions: {
-        headerStyle: styles.headerStyle
-    }
-});
 
 export default PunterTipsStack;

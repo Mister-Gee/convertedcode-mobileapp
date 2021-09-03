@@ -35,7 +35,7 @@ export default function App() {
       }
       else{
         // setIsLoggedIn(false)
-        isLoggedIn.set(true)
+        isLoggedIn.set(false)
       }
     }
     initLoad()
@@ -47,7 +47,7 @@ export default function App() {
       onPress={() => Keyboard.dismiss()}
     >
       <SafeAreaView style={styles.container}>
-        {isLoggedIn.get()
+        {isLoggedIn.get() === true
         ?
         <>
         <Navigator 

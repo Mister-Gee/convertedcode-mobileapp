@@ -1,6 +1,6 @@
 import React from 'react';
-import { createDrawerNavigator } from 'react-navigation-drawer';
-import { createAppContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 import IndexStack from './IndexStack';
 import MatchReviewStack from './MatchReviewStack';
 import ConvertCodeStack from './ConvertCodeStack';
@@ -10,52 +10,50 @@ import ConversionHistoryStack from './ConversionHistoryStack';
 import DashboardStack from './DashboardStack';
 import NavDrawer from '../screens/Components/NavDrawer';
 
-const RootDrawerNavigator = createDrawerNavigator({
-    Home: {
-        screen: IndexStack,
-    },
-    ConvertCode: {
-        screen: ConvertCodeStack,
-        navigationOptions: () => ({
-            title: "Convert Code"
-        })
-    },
-    PuntersTips: {
-        screen: PunterTipsStack,
-        navigationOptions: () => ({
-            title: "Punters Tips"
-        })
-    },
-    MatchReview: {
-        screen: MatchReviewStack,
-        navigationOptions: () => ({
-            title: "Match Review"
-        })
-    },
-    BetTerms: {
-        screen: BetTermsStack,
-        navigationOptions: () => ({
-            title: "Bet Terminologies"
-        })
-    },
-    ConversionHistory: {
-        screen: ConversionHistoryStack,
-        navigationOptions: () => ({
-            title: "Conversion History"
-        })
-    },
-    Dashboard: {
-        screen: DashboardStack,
-        navigationOptions: () => ({
-            title: "Dashboard"
-        })
-    }
-}, {
-    // drawerBackgroundColor: 'rgba(255,255,255,.9)',
-    contentOptions: {
-        activeTintColor: '#2F970C',
-    }, 
-    contentComponent: ({navigation}) => <NavDrawer navigation={navigation} />
-})
+const Drawer = createDrawerNavigator();
 
-export default createAppContainer(RootDrawerNavigator)
+const Navigator = () => {
+    return (
+        <NavigationContainer>
+            <Drawer.Navigator 
+                initialRouteName="Home"
+                drawerContent={({navigation, state}) => <NavDrawer navigation={navigation} state={state} />}
+                backBehavior = "history"
+                screenOptions={{
+                    headerShown: false
+                }}
+            >
+                <Drawer.Screen 
+                    name="Home" 
+                    component={IndexStack}    
+                />
+                <Drawer.Screen 
+                    name="ConvertCode" 
+                    component={ConvertCodeStack}   
+                />
+                <Drawer.Screen 
+                    name="PuntersTips" 
+                    component={PunterTipsStack}   
+                />
+                <Drawer.Screen 
+                    name="MatchReview" 
+                    component={MatchReviewStack}   
+                />
+                <Drawer.Screen 
+                    name="BetTerms" 
+                    component={BetTermsStack}   
+                />
+                <Drawer.Screen 
+                    name="ConversionHistory" 
+                    component={ConversionHistoryStack}   
+                />
+                <Drawer.Screen 
+                    name="Dashboard" 
+                    component={DashboardStack}   
+                />
+            </Drawer.Navigator>
+        </NavigationContainer>
+    )
+}
+
+export default Navigator;

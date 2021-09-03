@@ -188,11 +188,21 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 9,
         paddingBottom: 3,
-        paddingHorizontal: 0
+        paddingHorizontal: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+
+        elevation: 6,
     },
     headerTextWrap: {
         flexDirection: 'row',
-        marginLeft: 69
+        marginLeft: 59,
+        marginTop: 5
     },
     headerImage: {
         width: 40,
@@ -219,7 +229,9 @@ const styles = StyleSheet.create({
     mainDetailHeaderText: {
         fontSize: 18,
         fontFamily: 'inter-regular',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginTop: -5,
+        marginLeft: -25
     },
     lottie: {
         width: 500,

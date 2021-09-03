@@ -14,7 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-const NavDrawer = ({navigation}) => {
+const NavDrawer = ({navigation, state}) => {
     const {user} = useState(store)
     const {accessToken} = useState(store)
 
@@ -43,9 +43,9 @@ const NavDrawer = ({navigation}) => {
                         style={styles.routeLinkWrapper}
                         onPress={() => navigation.navigate("Home")}
                     >
-                        <Entypo name="home" size={28} color={navigation.state.index === 0 ? "#2F970C" : "#8B8787"} />
+                        <Entypo name="home" size={28} color={state.index === 0 ? "#2F970C" : "#8B8787"} />
                         <Text 
-                            style={[styles.routeLink, navigation.state.index === 0 && styles.activeRouteLink]}
+                            style={[styles.routeLink, state.index === 0 && styles.activeRouteLink]}
                         >
                             Home
                         </Text>
@@ -56,9 +56,9 @@ const NavDrawer = ({navigation}) => {
                         style={styles.routeLinkWrapper}
                         onPress={() => navigation.navigate("PuntersTips")}
                     >
-                        <MaterialCommunityIcons name="lightbulb-on-outline" size={28} color={navigation.state.index === 2 ? "#2F970C" : "#8B8787"} />
+                        <MaterialCommunityIcons name="lightbulb-on-outline" size={28} color={state.index === 2 ? "#2F970C" : "#8B8787"} />
                         <Text 
-                            style={[styles.routeLink, navigation.state.index === 2 && styles.activeRouteLink]}
+                            style={[styles.routeLink, state.index === 2 && styles.activeRouteLink]}
                         >
                             Punters Tips
                         </Text>
@@ -69,9 +69,9 @@ const NavDrawer = ({navigation}) => {
                         style={styles.routeLinkWrapper}
                         onPress={() => navigation.navigate("ConvertCode")}
                     >
-                        <FontAwesome name="refresh" size={28} color={navigation.state.index === 1 ? "#2F970C" : "#8B8787"} />
+                        <FontAwesome name="refresh" size={28} color={state.index === 1 ? "#2F970C" : "#8B8787"} />
                         <Text 
-                            style={[styles.routeLink, navigation.state.index === 1 && styles.activeRouteLink]}
+                            style={[styles.routeLink, state.index === 1 && styles.activeRouteLink]}
                         >
                             Convert Code
                         </Text>
@@ -82,9 +82,9 @@ const NavDrawer = ({navigation}) => {
                         style={styles.routeLinkWrapper}
                         onPress={() => navigation.navigate("ConversionHistory")}
                     >
-                        <FontAwesome name="history" size={28} color={navigation.state.index === 5 ? "#2F970C" : "#8B8787"} />
+                        <FontAwesome name="history" size={28} color={state.index === 5 ? "#2F970C" : "#8B8787"} />
                         <Text 
-                            style={[styles.routeLink, navigation.state.index === 5 && styles.activeRouteLink]}
+                            style={[styles.routeLink, state.index === 5 && styles.activeRouteLink]}
                         >
                             Conversion History
                         </Text>
@@ -95,9 +95,9 @@ const NavDrawer = ({navigation}) => {
                         style={styles.routeLinkWrapper}
                         onPress={() => navigation.navigate("Dashboard")}
                     >
-                        <MaterialIcons name="dashboard" size={28} color={navigation.state.index === 6 ? "#2F970C" : "#8B8787"} />
+                        <MaterialIcons name="dashboard" size={28} color={state.index === 6 ? "#2F970C" : "#8B8787"} />
                         <Text 
-                            style={[styles.routeLink, navigation.state.index === 6 && styles.activeRouteLink]}
+                            style={[styles.routeLink, state.index === 6 && styles.activeRouteLink]}
                         >
                             Dashboard
                         </Text>
@@ -108,9 +108,9 @@ const NavDrawer = ({navigation}) => {
                         style={styles.routeLinkWrapper}
                         onPress={() => navigation.navigate("MatchReview")}
                     >
-                        <FontAwesome name="star" size={28} color={navigation.state.index === 3 ? "#2F970C" : "#8B8787"} />
+                        <FontAwesome name="star" size={28} color={state.index === 3 ? "#2F970C" : "#8B8787"} />
                         <Text 
-                            style={[styles.routeLink, navigation.state.index === 3 && styles.activeRouteLink]}
+                            style={[styles.routeLink, state.index === 3 && styles.activeRouteLink]}
                         >
                             Match Reviews
                         </Text>
@@ -121,9 +121,9 @@ const NavDrawer = ({navigation}) => {
                         style={styles.routeLinkWrapper}
                         onPress={() => navigation.navigate("BetTerms")}
                     >
-                        <FontAwesome name="th-list" size={28} color={navigation.state.index === 4 ? "#2F970C" : "#8B8787"} />
+                        <FontAwesome name="th-list" size={28} color={state.index === 4 ? "#2F970C" : "#8B8787"} />
                         <Text 
-                            style={[styles.routeLink, navigation.state.index === 4 && styles.activeRouteLink]}
+                            style={[styles.routeLink, state.index === 4 && styles.activeRouteLink]}
                         >
                             Bet Terminologies
                         </Text>

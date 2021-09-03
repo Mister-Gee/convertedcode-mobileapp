@@ -1,34 +1,31 @@
-import { createStackNavigator } from 'react-navigation-stack';
-import styles from '../styles/global';
+import { createStackNavigator } from '@react-navigation/stack';
 import Header from '../screens/Components/Header';
 import DetailHeader from '../screens/Components/DetailHeader';
 import React from 'react';
 import BetTerms from '../screens/BetTerminologies/BetTerms';
 import BetTerm from '../screens/BetTerminologies/BetTerm';
 
-const screens = {
-    Index: {
-        screen: BetTerms,
-        navigationOptions:({navigation}) => {
-            return {
-                headerTitle: () => <Header navigation={navigation} title="Bet Terminologies" />
-            }
-        }
-    },
-    Detail: {
-        screen: BetTerm,
-        navigationOptions: ({navigation}) => {
-            return {
-                headerTitle: () => <DetailHeader title={navigation.getParam('title')} />
-            }
-        }
-    },
+const Stack = createStackNavigator();
+const BetTermsStack = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen 
+                name="Index" 
+                component={BetTerms} 
+                options = {{
+                header: ({navigation}) => <Header navigation={navigation} title="Bet Terminologies" />
+            }}
+            />
+            <Stack.Screen 
+                name="Detail" 
+                component={BetTerm} 
+                options = {{
+                headerShown: true,
+                header: ({navigation, route}) => <DetailHeader navigation={navigation} title={route.params.title} />
+            }}
+            />
+        </Stack.Navigator>
+    )
 }
-
-const BetTermsStack = createStackNavigator(screens, {
-    defaultNavigationOptions: {
-        headerStyle: styles.headerStyle
-    }
-});
 
 export default BetTermsStack;

@@ -34,11 +34,11 @@ const Home = ({navigation}) => {
         return (
             <TouchableOpacity
                 onPress={() => {
-                    navigation.push("MatchReview", {}, NavigationActions.navigate({
-                        routeName: 'Detail', 
+                    navigation.navigate("MatchReview", {
+                        screen: 'Detail',
                         params: item
                     })
-                )}
+                }
                 }
             >
                 <View style={styles.homeMRItem}>

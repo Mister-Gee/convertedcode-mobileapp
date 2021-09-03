@@ -3,12 +3,8 @@ import { View, Text, ScrollView, Image } from 'react-native';
 import styles from '../../styles/global';
 import { cleanUpContent, dateConverter } from '../../utils/Functions';
 
-const MatchReviewDetail = ({navigation}) => {
-    const title = navigation.getParam('title')
-    const img = navigation.getParam('image_dir')
-    const content = navigation.getParam('content')
-    const author = navigation.getParam('author')
-    const created_at = navigation.getParam('created_at')
+const MatchReviewDetail = ({route}) => {
+    const {title, image_dir, content, author, created_at} = route.params
 
 
     return (
@@ -17,7 +13,7 @@ const MatchReviewDetail = ({navigation}) => {
                 <Image
                     style={styles.detailImage}
                     source={{
-                        uri: `https://api.convertedcode.com/storage/${img}`
+                        uri: `https://api.convertedcode.com/storage/${image_dir}`
                     }}
                 />
                 <View style={styles.detailAuthorDateWrapper}>
