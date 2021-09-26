@@ -196,8 +196,8 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.27,
         shadowRadius: 4.65,
-
         elevation: 6,
+        backgroundColor: '#FFFFFF'
     },
     headerTextWrap: {
         flexDirection: 'row',
@@ -212,7 +212,8 @@ const styles = StyleSheet.create({
         fontFamily: 'inter-medium',
         fontSize: 17,
         fontWeight: '100',
-        marginTop: 8
+        marginTop: 8,
+        fontWeight: 'bold'
     },
     convertedText: {
         color: '#2F970C'
@@ -494,7 +495,9 @@ const styles = StyleSheet.create({
         marginTop: 150
     },
     punterTipsImage: {
+        resizeMode: 'stretch',
         width: '100%',
+        height: 150,
         marginBottom: 20
     },
     tableSection: {
@@ -664,6 +667,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#2F9F0C',
         paddingVertical: 10,
         paddingHorizontal: 40
+    },
+    linkIconWrapper: {
+        flexDirection: 'row',
+        paddingVertical: 5
+    },
+    navIconBar: {
+        padding: 7
     }
 });
 

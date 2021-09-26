@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import {Feather} from '@expo/vector-icons';
 import styles from '../../styles/global';
 
@@ -12,7 +12,11 @@ const Header = ({navigation, title}) => {
 
     return (
         <View style={styles.header}>
-            <Feather name="menu" size={24} color="black" onPress={openMenu}/>
+            <TouchableOpacity
+                 onPress={openMenu} 
+            >
+                <Feather name="menu" size={24} color="black"style={styles.navIconBar}/>
+            </TouchableOpacity>
             <View style={styles.headerTextWrap}>
                 <Text style={styles.mainHeaderText}> {title} </Text>
             </View>

@@ -31,7 +31,7 @@ const PuntersTips = () => {
             <View>
                 <Image
                     style={styles.punterTipsImage}
-                    source={require("../../assets/images/punters-tips.png")} 
+                    source={require("../../assets/images/punters-tips.jpg")} 
                 />
             </View>
             <View style={styles.tableSection}>

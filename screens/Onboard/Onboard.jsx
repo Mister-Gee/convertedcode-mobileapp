@@ -39,22 +39,22 @@ const Onboard = ({setRerender}) => {
     const slides = [
     {
         key: 'one',
-        title: 'Title 1',
-        text: 'Description.\nSay something cool',
+        title: 'Convert Code',
+        text: 'Convert your Booking Codes \n to any of your prefered Bookies',
         image: require('../../assets/images/onboard1.png'),
         backgroundColor: '#59b2ab',
     },
     {
         key: 'two',
-        title: 'Title 2',
-        text: 'Other cool stuff',
+        title: 'Match Review',
+        text: 'Get Latest Sports Reviews in Real Time',
         image: require('../../assets/images/onboard2.png'),
         backgroundColor: '#febe29',
     },
     {
         key: 'three',
-        title: 'Rocket guy',
-        text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
+        title: 'Punters Tips',
+        text: 'Get the Latest Bet codes from \n Top Notch Punter from around the globe',
         image: require('../../assets/images/onboard3.png'),
         backgroundColor: '#22bcb5',
     }

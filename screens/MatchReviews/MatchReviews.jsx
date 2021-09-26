@@ -77,7 +77,7 @@ const MatchReviews = ({navigation}) => {
 
     return (
         <ScrollView>
-            <Carousel
+            {/* <Carousel
                 data={entries}
                 renderItem={RenderItem}
                 sliderWidth={400}
@@ -86,6 +86,10 @@ const MatchReviews = ({navigation}) => {
                 loop={true}
                 activeSlideOffset={50}
                 autoplayInterval={6000}
+            /> */}
+            <Image
+                style={styles.punterTipsImage}
+                source={require("../../assets/images/match-review.jpg")} 
             />
             <View style={styles.listContainer}>
                 <FlatList

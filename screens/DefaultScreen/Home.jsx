@@ -4,12 +4,21 @@ import { getLatestMatchReviews } from '../../services/matchReviewServices';
 import { SliderBox } from "react-native-image-slider-box";
 import Carousel from 'react-native-snap-carousel';
 import styles from '../../styles/global'
-import { NavigationActions } from 'react-navigation';
 import { reduceContentDisplay, dateConverter } from '../../utils/Functions';
 import Footer from '../Components/Footer';
+import * as WebBrowser from 'expo-web-browser';
+
 
 const Home = ({navigation}) => {
     const [matchReviews, setMatchReviews] = useState([])
+
+    const imageLink = [
+        "",
+        "",
+        "",
+        "https://refpasrasw.world/C?tag=d_1172377m_47939c_&site=1172377&ad=47939&urlred=https%3A%2F%2F22betkjs.com%2Fp%2Fsports-general%2Findex_en.php",
+        "https://refpasrasw.world/C?tag=d_1172377m_47941c_&site=1172377&ad=47941&urlred=https%3A%2F%2Flinks22.com%2Fbonus%2Frules%2Freload-sport%2F"
+    ]
 
     useEffect(() => {
         const fetch = async() => {
@@ -25,10 +34,18 @@ const Home = ({navigation}) => {
     },[])
 
     const images = [
-        require("../../assets/images/header.png"),
-        require("../../assets/images/header.png"),
-        require("../../assets/images/header.png")
+        require("../../assets/images/bannerNew1.png"),
+        require("../../assets/images/bannerNew2.png"),
+        require("../../assets/images/bannerNew3.png"),
+        "https://refpasrasw.world/img/AdAgent_15/30c7e7fd-4dfb-44fc-9533-7c7930cfd7bc.png",
+        "https://refpasrasw.world/img/AdAgent_15/b4751667-cf95-4dca-b9c3-d7111410370a.png"
     ]
+
+    const handleLink = (index) => {
+        if(index > 2){
+            WebBrowser.openBrowserAsync(imageLink[index]);
+        }
+    }
 
     const HomeMRItem = ({item}) => {
         return (
@@ -94,12 +111,12 @@ const Home = ({navigation}) => {
             <View style={styles.headerSlide}>
                <SliderBox
                     images={images}
-                    sliderBoxHeight={200}
-                    // onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+                    sliderBoxHeight={125}
+                    onCurrentImagePressed={index => handleLink(index)}
                     dotColor="#2F970C"
                     inactiveDotColor="#90A4AE"
-                    // autoplay={true}
-                    // circleLoop={true}
+                    autoplay={true}
+                    circleLoop={true}
                 />
             </View>
             <View style={styles.optionsWrapper}>

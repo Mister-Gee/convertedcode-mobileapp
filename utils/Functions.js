@@ -40,7 +40,11 @@ export const deleteReturnTokenFromStorage = async() => {
 }
 
 export const reduceContentDisplay = (str) => {
-    return str.substring(0, 50);
+    const a = str.split("<br/>").join(" ")
+    const b = a.split("<b>").join("")
+    const c = b.split("</b>").join("")
+    const d = c.split("</br>").join(" ")
+    return d.substring(0, 50);
 }
 
 export const dateToInputDate = (format) => {
@@ -72,8 +76,9 @@ export const dateConverter = (format) => {
 }
 
 export const cleanUpContent = (str) => {
-    const a = str.replaceAll("<br/>", "\n")
-    const b = a.replaceAll("<b>", "")
-    const c = b.replaceAll("b>", "")
-    return c
+    const a = str.split("<br/>").join("\n")
+    const b = a.split("<b>").join("")
+    const c = b.split("</b>").join("")
+    const d = c.split("</br>").join("\n")
+    return d
 }

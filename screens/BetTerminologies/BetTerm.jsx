@@ -4,9 +4,8 @@ import styles from '../../styles/global';
 import { cleanUpContent, dateConverter } from '../../utils/Functions';
 
 
-const BetTerm = ({navigation}) => {
-    const title = navigation.getParam('title')
-    const content = navigation.getParam('content')
+const BetTerm = ({route}) => {
+    const {title, content} = route.params
 
     return (
         <ScrollView>

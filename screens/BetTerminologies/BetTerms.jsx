@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text,Image, FlatList, TouchableOpacity } from 'react-native';
 import { getBetTerms } from '../../services/betTermsServices';
 import { reduceContentDisplay} from '../../utils/Functions';
 import styles from '../../styles/global';
@@ -11,7 +11,7 @@ const BetTerms = ({navigation}) => {
 
     useEffect(() => {
         const fetch = async () => {
-            const res = await getMatchReviews()
+            const res = await getBetTerms()
             setBetTerms(res.data.data)
         }
         fetch()
@@ -34,6 +34,10 @@ const BetTerms = ({navigation}) => {
 
     return (
         <View>
+            <Image
+                style={styles.punterTipsImage}
+                source={require("../../assets/images/bet-terms.jpg")} 
+            />
             <View style={styles.listContainer}>
                 <FlatList
                     keyExtractor={(item) => item.id}
