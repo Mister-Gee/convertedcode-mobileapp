@@ -1,29 +1,30 @@
 {
+  "name": "Converted Code(Beta)",
+  "displayName": "Converted Code(Beta)",
+  "expo": {
     "name": "Converted Code(Beta)",
-    "displayName": "Converted Code(Beta)",
-    "expo": {
-        "name": "Converted Code(Beta)",
-        "slug": "ConvertedCode",
-        "version": "1.0.3",
-        "orientation": "portrait",
-        "icon": "./assets/images/icon.png",
-        "splash": {
-            "image": "./assets/images/splash.png",
-            "resize": "contain",
-            "backgroundColor": "#FFFFFF"
-        },
-        "assetBundlePatterns": [
-            "**/*"
-        ],
-        "ios": {
-            "supportsTablet": true
-        },
-        "android": {
-            "adaptiveIcon": {
-                "foregroundImage": "./assets/images/adaptive-icon.png",
-                "backgroundColor": "#FFFFFF"
-            },
-            "package": "com.convertedcode"
-        }
+    "slug": "ConvertedCode",
+    "version": "1.0.3",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resize": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.convertedcode"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.convertedcode"
     }
+  }
 }

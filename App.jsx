@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import AppLoading from 'expo-app-loading';
-import {TouchableWithoutFeedback, Keyboard } from 'react-native';
+import {TouchableWithoutFeedback, Keyboard, BackHandler } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import styles from './styles/global';
 import getFont from './constants/getFont';
@@ -40,6 +40,24 @@ export default function App() {
     }
     initLoad()
   },[reRender])
+
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert('Exit App!', 'Are You sure you want to exit app?', [
+        {
+          text: 'No',
+          onPress: () => null,
+          style: 'cancel',
+        },
+        { text: 'Yes', onPress: () => BackHandler.exitApp() },
+      ]);
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+
+    return () => backHandler.remove();
+  }, []);
 
   if(isAppLoaded){
     return (
